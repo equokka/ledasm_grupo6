@@ -47,7 +47,7 @@ led_y               db      0,1,2,3,4,5,0,0 ; 8 dup (0)
 led_size            db      8 dup (1)
 led_color           db      8 dup (0Fh) ; bright white
 
-; C?r para LEDs desligados
+; Côr para LEDs desligados
 color_disabled      db      08h ; gray
 
 ; Strings
@@ -75,9 +75,9 @@ txt_menu_1          db      " 0 - Voltar a trás                ", 0ah,0dh
 
 txt_menu_2          db      " 0 - Voltar a trás                ", 0ah,0dh
                     db      " 1 - Alterar todos                ", 0ah,0dh
-                    db      " 2 - Alterar LED especí­fico       ", 0ah,0dh,24h
+                    db      " 2 - Alterar LED específico       ", 0ah,0dh,24h
 
-txt_menu_2_a        db      " 0 - Voltar a trás                ", 0ah,0dh
+txt_menu_2_1        db      " 0 - Voltar a trás                ", 0ah,0dh
                     db      " 1 - Cor                          ", 0ah,0dh
                     db      " 2 - Posição X                    ", 0ah,0dh
                     db      " 3 - Posição Y                    ", 0ah,0dh
@@ -256,8 +256,8 @@ led_draw            endp
 
 main                proc
 
-  menu_0:
-                    call    clear_screen                                        ; MENU 0 - Menu principal ------------------------------------------------------
+  menu_0: ; -------------------------------------------------------------------- MENU 0 - Menu principal -------------------------------------------------------
+                    call    clear_screen
                     lea     dx, txt_menu_0
                     call    print
                     mov     al, 3
@@ -271,8 +271,8 @@ main                proc
                     je      menu_2
                     cmp     al, 3                                               ; 3 -> Visualizar leds
                     je      leds_view
-  menu_1:
-                    call    clear_screen                                        ; MENU 1 - Selecionar padrão ---------------------------------------------------
+  menu_1: ; -------------------------------------------------------------------- MENU 1 - Selecionar padrão ----------------------------------------------------
+                    call    clear_screen
                     lea     dx, txt_menu_1
                     call    print
                     mov     al, 4
@@ -281,15 +281,15 @@ main                proc
                     cmp     al, 0                                               ; 0 -> Ir para o menu 0
                     je      menu_0
                     cmp     al, 1                                               ; 1 -> Todos desligados
-                    je      exit ;FIXME
+                    je      option_1_1
                     cmp     al, 2                                               ; 2 -> Todos ligados
-                    je      exit ;FIXME
+                    je      option_1_2
                     cmp     al, 3                                               ; 3 -> Alternados
-                    je      exit ;FIXME
+                    je      option_1_3
                     cmp     al, 4                                               ; 4 -> Alternados (alt)
-                    je      exit ;FIXME
-  menu_2:
-                    call    clear_screen                                        ; MENU 2 - Alterar LEDs --------------------------------------------------------
+                    je      option_1_4
+  menu_2: ; -------------------------------------------------------------------- MENU 2 - Alterar LEDs ---------------------------------------------------------
+                    call    clear_screen
                     lea     dx, txt_menu_2
                     call    print
                     mov     al, 2
@@ -298,26 +298,59 @@ main                proc
                     cmp     al, 0                                               ; 0 -> Ir para o menu 0
                     je      menu_0
                     cmp     al, 1                                               ; 1 -> Alterar todos
-                    je      exit ;FIXME
-                    cmp     al, 2                                               ; 2 -> Alterar LED especÃ­fico
-                    je      exit ;FIXME
-  menu_2_a:
-                    call    clear_screen                                        ; MENU 2_a ---------------------------------------------------------------------
-                    lea     dx, txt_menu_2_a
+                    je      menu_2_1
+                    cmp     al, 2                                               ; 2 -> Alterar LED específico
+                    je      menu_2_2
+  menu_2_1: ; ------------------------------------------------------------------ MENU 2_1 - Atributos do(s) LED(s) ---------------------------------------------
+                    call    clear_screen
+                    lea     dx, txt_menu_2_1
                     call    print
+
+                    mov     ah, al                                              ; `ah` <- `al` : store previous option in `ah`
+
                     mov     al, 4
                     call    get_option
 
-                    cmp     al, 0                                               ; 0 -> Ir para o menu 2
-                    je      menu_2
+                    cmp     al, 0                                               ; 0 -> Ir para o menu 0
+                    je      menu_0
                     cmp     al, 1                                               ; 1 -> Cor
-                    je      exit ;FIXME
+                    je      option_2_1_1
                     cmp     al, 2                                               ; 2 -> Posição X
-                    je      exit ;FIXME
+                    je      option_2_1_2
                     cmp     al, 3                                               ; 3 -> Posição Y
-                    je      exit ;FIXME
+                    je      option_2_1_3
                     cmp     al, 4                                               ; 4 -> Dimensão
-                    je      exit ;FIXME
+                    je      option_2_1_4
+
+  menu_2_2: ; ------------------------------------------------------------------ MENU 2_2 - Selecione um LED ---------------------------------------------------
+                    ; FIXME
+                    jmp     menu_2_1
+
+  option_1_1: ; ---------------------------------------------------------------- MENU 1, OPÇÃO 1 - Todos desligados --------------------------------------------
+                    ; FIXME
+                    jmp     menu_0
+  option_1_2: ; ---------------------------------------------------------------- MENU 1, OPÇÃO 2 - Todos ligados -----------------------------------------------
+                    ; FIXME
+                    jmp     menu_0
+  option_1_3: ; ---------------------------------------------------------------- MENU 1, OPÇÃO 3 - Alternados --------------------------------------------------
+                    ; FIXME
+                    jmp     menu_0
+  option_1_4: ; ---------------------------------------------------------------- MENU 1, OPÇÃO 4 - Alternados (alt) --------------------------------------------
+                    ; FIXME
+                    jmp     menu_0
+
+  option_2_1_1: ; -------------------------------------------------------------- MENU 2_1, OPÇÃO 1 - Côr -------------------------------------------------------
+                    ; FIXME
+                    jmp     menu_2_1
+  option_2_1_2: ; -------------------------------------------------------------- MENU 2_1, OPÇÃO 2 - Posição X -------------------------------------------------
+                    ; FIXME
+                    jmp     menu_2_1
+  option_2_1_3: ; -------------------------------------------------------------- MENU 2_1, OPÇÃO 3 - Posição Y -------------------------------------------------
+                    ; FIXME
+                    jmp     menu_2_1
+  option_2_1_4: ; -------------------------------------------------------------- MENU 2_1, OPÇÃO 4 - Dimensão --------------------------------------------------
+                    ; FIXME
+                    jmp     menu_2_1
 
   leds_view:
                     ; FIXME
