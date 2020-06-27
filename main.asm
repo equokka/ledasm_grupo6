@@ -64,7 +64,8 @@ txt_colors          db      " ________________________________ ", 0ah,0dh
 
 txt_menu_0          db      " 0 - Desligar                     ", 0ah,0dh
                     db      " 1 - Selecionar padrão            ", 0ah,0dh
-                    db      " 2 - Alterar LEDs                 ", 0ah,0dh,24h
+                    db      " 2 - Alterar LEDs                 ", 0ah,0dh
+                    db      " 3 - Visualizar LEDs              ", 0ah,0dh,24h
 
 txt_menu_1          db      " 0 - Voltar a trás                ", 0ah,0dh
                     db      " 1 - Todos desligados             ", 0ah,0dh
@@ -74,7 +75,7 @@ txt_menu_1          db      " 0 - Voltar a trás                ", 0ah,0dh
 
 txt_menu_2          db      " 0 - Voltar a trás                ", 0ah,0dh
                     db      " 1 - Alterar todos                ", 0ah,0dh
-                    db      " 2 - Alterar LED especÃ­fico       ", 0ah,0dh,24h
+                    db      " 2 - Alterar LED especí­fico       ", 0ah,0dh,24h
 
 txt_menu_2_a        db      " 0 - Voltar a trás                ", 0ah,0dh
                     db      " 1 - Cor                          ", 0ah,0dh
@@ -256,20 +257,22 @@ led_draw            endp
 main                proc
 
   menu_0:
-                    call    clear_screen                                        ; MENU 0 -----------------------------------------------------------------------
+                    call    clear_screen                                        ; MENU 0 - Menu principal ------------------------------------------------------
                     lea     dx, txt_menu_0
                     call    print
-                    mov     al, 2
+                    mov     al, 3
                     call    get_option
 
                     cmp     al, 0                                               ; 0 -> Sair do programa
                     je      exit
-                    cmp     al, 1                                               ; 1 -> Ir para o menu 1
+                    cmp     al, 1                                               ; 1 -> Ir para o menu 1 (Selecionar padrão)
                     je      menu_1
-                    cmp     al, 2                                               ; 2 -> Ir para o menu 2
+                    cmp     al, 2                                               ; 2 -> Ir para o menu 2 (Alterar LEDs)
                     je      menu_2
+                    cmp     al, 3                                               ; 3 -> Visualizar leds
+                    je      leds_view
   menu_1:
-                    call    clear_screen                                        ; MENU 1 -----------------------------------------------------------------------
+                    call    clear_screen                                        ; MENU 1 - Selecionar padrão ---------------------------------------------------
                     lea     dx, txt_menu_1
                     call    print
                     mov     al, 4
@@ -277,15 +280,27 @@ main                proc
 
                     cmp     al, 0                                               ; 0 -> Ir para o menu 0
                     je      menu_0
+                    cmp     al, 1                                               ; 1 -> Todos desligados
+                    je      exit ;FIXME
+                    cmp     al, 2                                               ; 2 -> Todos ligados
+                    je      exit ;FIXME
+                    cmp     al, 3                                               ; 3 -> Alternados
+                    je      exit ;FIXME
+                    cmp     al, 4                                               ; 4 -> Alternados (alt)
+                    je      exit ;FIXME
   menu_2:
-                    call    clear_screen                                        ; MENU 2 -----------------------------------------------------------------------
+                    call    clear_screen                                        ; MENU 2 - Alterar LEDs --------------------------------------------------------
                     lea     dx, txt_menu_2
                     call    print
                     mov     al, 2
                     call    get_option
 
-                    cmp     al, 00                                               ; 0 -> Ir para o menu 0
+                    cmp     al, 0                                               ; 0 -> Ir para o menu 0
                     je      menu_0
+                    cmp     al, 1                                               ; 1 -> Alterar todos
+                    je      exit ;FIXME
+                    cmp     al, 2                                               ; 2 -> Alterar LED especÃ­fico
+                    je      exit ;FIXME
   menu_2_a:
                     call    clear_screen                                        ; MENU 2_a ---------------------------------------------------------------------
                     lea     dx, txt_menu_2_a
@@ -293,9 +308,22 @@ main                proc
                     mov     al, 4
                     call    get_option
 
-                    cmp     al, 00                                               ; 0 -> Ir para o menu 2
+                    cmp     al, 0                                               ; 0 -> Ir para o menu 2
                     je      menu_2
+                    cmp     al, 1                                               ; 1 -> Cor
+                    je      exit ;FIXME
+                    cmp     al, 2                                               ; 2 -> Posição X
+                    je      exit ;FIXME
+                    cmp     al, 3                                               ; 3 -> Posição Y
+                    je      exit ;FIXME
+                    cmp     al, 4                                               ; 4 -> Dimensão
+                    je      exit ;FIXME
+
+  leds_view:
+                    ; FIXME
 
 ; --------------------------------------------------------------------------------------------------------------------------------------------------------------
-  exit:             int     20h                                                 ; end program
+  exit:
+                    call    clear_screen
+                    int     20h                                                 ; end program
 main                endp
