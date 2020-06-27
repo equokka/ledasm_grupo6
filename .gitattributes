@@ -1,4 +1,5 @@
 * text eol=lf
+* text encoding=utf-8
 
 *.asm text=crlf
 *.asm encoding=iso88591
