@@ -1,0 +1,6 @@
+* text eol=lf
+
+*.asm text=crlf
+*.asm encoding=iso88591
+*.inc text=crlf
+*.inc encoding=iso88591
