@@ -1,38 +1,38 @@
-                    title   AC Projeto Pr·tico - Grupo 6
-                            ; O grupo 6 È constituÌdo por:
-                            ; * Daniel ConceiÁ„o
+                    title   AC Projeto Pr√°tico - Grupo 6
+                            ; O grupo 6 √© constitu√≠do por:
+                            ; * Daniel Concei√ß√£o
                             ; * Filipe Correia
                             ; * Pedro Filipe
 
 ; Objetivos:
-; * Dado um conjunto de oito l‚mpadas (leds, sinais luminosos), numeradas de 0 a
-;   7, permitir a escolha de v·rias  alternativas de padrıes (combinaÁıes) de
+; * Dado um conjunto de oito l√¢mpadas (leds, sinais luminosos), numeradas de 0 a
+;   7, permitir a escolha de v√°rias  alternativas de padr√µes (combina√ß√µes) de
 ;   luzes coloridas:
 ;   * todas desligada (apagadas);                                               [ ]
 ;   * todas acesas (ligadas);                                                   [ ]
-;   * em altern‚ncia: ligadas (0, 2, 4, 6), desligadas (1, 3, 5, 7);            [ ]
-; * Definir a cor da luz, a posiÁ„o (linha e coluna) das l‚mpadas e a dimens„o
+;   * em altern√¢ncia: ligadas (0, 2, 4, 6), desligadas (1, 3, 5, 7);            [ ]
+; * Definir a cor da luz, a posi√ß√£o (linha e coluna) das l√¢mpadas e a dimens√£o
 ;   (um ou mais caracteres).                                                    [ ]
 
 ; Requisitos:
 ; * Estruturar o programa usando procedimentos (nomeadamente para a entrada dos
-;   dados), vari·veis (incluindo vetores, se adequado) e constantes.            [ ]
-; * Incluir um "menu" inicial que permita a escolher a operaÁ„o a executar.     [ ]
-; * Prevenir e detetar a ocorrÍncia de erros na leitura dos dados (validaÁ„o).  [ ]
-; * Documentar devidamente o cÛdigo, acrescentando coment·rios ao programa
+;   dados), vari√°veis (incluindo vetores, se adequado) e constantes.            [ ]
+; * Incluir um "menu" inicial que permita a escolher a opera√ß√£o a executar.     [ ]
+; * Prevenir e detetar a ocorr√™ncia de erros na leitura dos dados (valida√ß√£o).  [ ]
+; * Documentar devidamente o c√≥digo, acrescentando coment√°rios ao programa
 ;   fonte, ou em documento separado, indicando:
-;   * Procedimentos definidos e forma de passagem de par‚metros;                [ ]
+;   * Procedimentos definidos e forma de passagem de par√¢metros;                [ ]
 ;   * Algoritmo(s) implementado(s);                                             [ ]
-;   * LimitaÁıes do programa (valores das vari·veis) e situaÁıes n„o
+;   * Limita√ß√µes do programa (valores das vari√°veis) e situa√ß√µes n√£o
 ;     contempladas.                                                             [ ]
-;   * Atender a questıes de eficiÍncia: minimizar o n∫ de instruÁıes e o n∫ de
-;     vari·veis (memÛria ocupada)                                               [ ]
+;   * Atender a quest√µes de efici√™ncia: minimizar o n¬∫ de instru√ß√µes e o n¬∫ de
+;     vari√°veis (mem√≥ria ocupada)                                               [ ]
 ;
 ; ---
 ;
-; * Entrega intermÈdia: estrutura do programa, ecr„ inicial e vari·veis e
+; * Entrega interm√©dia: estrutura do programa, ecr√£ inicial e vari√°veis e
 ;   procedimentos a definir.                                                    [x]
-; * ApresentaÁ„o oral e demonstraÁ„o.                                           [ ]
+; * Apresenta√ß√£o oral e demonstra√ß√£o.                                           [ ]
 
 ; --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ led_y               db      0,1,2,3,4,5,0,0 ; 8 dup (0)
 led_size            db      8 dup (1)
 led_color           db      8 dup (0Fh) ; bright white
 
-; CÙr para LEDs desligados
+; C√¥r para LEDs desligados
 color_disabled      db      08h ; gray
 
 ; Strings
@@ -62,33 +62,38 @@ txt_colors          db      " ________________________________ ", 0ah,0dh
                     db      "| 7 White       | F Bright White |", 0ah,0dh
                     db      " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ", 0ah,0dh,24h
 
-txt_menu_0          db      " 0 - Desligar                     ", 0ah,0dh
-                    db      " 1 - Selecionar padr„o            ", 0ah,0dh
+txt_menu_0          db      " ::: ledasm_grupo6 :::            ", 0ah,0dh
+                    db      " 0 - Desligar                     ", 0ah,0dh
+                    db      " 1 - Selecionar padr√£o            ", 0ah,0dh
                     db      " 2 - Alterar LEDs                 ", 0ah,0dh
                     db      " 3 - Visualizar LEDs              ", 0ah,0dh,24h
 
-txt_menu_1          db      " 0 - Voltar a tr·s                ", 0ah,0dh
+txt_menu_1          db      " ::: Selecionar padr√£o :::        ", 0ah,0dh
+                    db      " 0 - Voltar a tr√°s                ", 0ah,0dh
                     db      " 1 - Todos desligados             ", 0ah,0dh
                     db      " 2 - Todos ligados                ", 0ah,0dh
                     db      " 3 - Alternados                   ", 0ah,0dh
                     db      " 4 - Alternados (alt)             ", 0ah,0dh,24h
 
-txt_menu_2          db      " 0 - Voltar a tr·s                ", 0ah,0dh
+txt_menu_2          db      " ::: Alterar LEDs :::             ", 0ah,0dh
+                    db      " 0 - Voltar a tr√°s                ", 0ah,0dh
                     db      " 1 - Alterar todos                ", 0ah,0dh
-                    db      " 2 - Alterar LED especÌfico       ", 0ah,0dh,24h
+                    db      " 2 - Alterar LED espec√≠fico       ", 0ah,0dh,24h
 
-txt_menu_2_1        db      " 0 - Voltar a tr·s                ", 0ah,0dh
+txt_menu_2_1        db      " ::: Alterar LEDs :::             ", 0ah,0dh
+                    db      " 0 - Voltar a tr√°s                ", 0ah,0dh
                     db      " 1 - Cor                          ", 0ah,0dh
-                    db      " 2 - PosiÁ„o X                    ", 0ah,0dh
-                    db      " 3 - PosiÁ„o Y                    ", 0ah,0dh
-                    db      " 4 - Dimens„o                     ", 0ah,0dh,24h
+                    db      " 2 - Posi√ß√£o X                    ", 0ah,0dh
+                    db      " 3 - Posi√ß√£o Y                    ", 0ah,0dh
+                    db      " 4 - Dimens√£o                     ", 0ah,0dh,24h
 
-txt_option          db      " OpÁ„o>", 24h
+txt_option          db      " Op√ß√£o: ", 24h
 
-txt_pick_color      db      " Cor:       ", 24h
-txt_pick_pos_x      db      " PosiÁ„o X: ", 24h
-txt_pick_pos_y      db      " PosiÁ„o Y: ", 24h
-txt_pick_size       db      " Dimens„o:  ", 24h
+txt_pick_led        db      " LED # (1-8): ", 24h
+txt_pick_color      db      " C√¥r: ", 24h
+txt_pick_pos_x      db      " Posi√ß√£o X: ", 24h
+txt_pick_pos_y      db      " Posi√ß√£o Y: ", 24h
+txt_pick_size       db      " Dimens√£o: ", 24h
 
 txt_newline         db      0ah,0dh,24h
 txt_clear_screen    db      30 dup(0ah,0dh), 24h                                ; literally just 30 newlines
@@ -98,10 +103,10 @@ txt_clear_screen    db      30 dup(0ah,0dh), 24h                                
 ; shorthand for int 21h/09h: Main DOS API/Display String.
 ; requires a terminated string loaded into `dx`.
 print               proc
-                    push    ax                                                  ; store ax in the stack
+                    push    ax                                                  ; store `ax` in the stack
                     mov     ah, 09h                                             ; print string with int 21h/09h
                     int     21h
-                    pop     ax                                                  ; restore ax from the stack
+                    pop     ax                                                  ; restore `ax` from the stack
                     ret                                                         ; return
 print               endp
 
@@ -131,9 +136,9 @@ get_char            proc
                     int     21h
 
                     mov     bl, al                                              ; bl <- al
-                    pop     ax                                                  ; restore original ax
+                    pop     ax                                                  ; restore original `ax`
                     mov     al, bl                                              ; al <- bl
-                    pop     bx                                                  ; restore original bx
+                    pop     bx                                                  ; restore original `bx`
 
                     ret
 get_char            endp
@@ -156,18 +161,73 @@ get_option          proc
 
                     call    convert_ascii_dec                                   ; convert character in `al` to decimal
 
-                    cmp     al, 0                                               ; if 0 >= `al` >= `bl` then jump back to the start
+                    cmp     al, 0                                               ; if 0 >= `al` >= `bl` is not true then jump back to the start
                     jl      get_option_init
                     cmp     al, bl
                     jg      get_option_init
 
                     mov     bl, al                                              ; `bl` <- `al` (option number)
-                    pop     ax                                                  ; restore original ax
+                    pop     ax                                                  ; restore original `ax`
                     mov     al, bl                                              ; `al` <- `bl`
-                    pop     bx                                                  ; restore original bx
+                    pop     bx                                                  ; restore original `bx`
 
                     ret
 get_option          endp
+
+; gets two characters, interprets and converts them to decimal, and stores the result in `al`.
+; if the input is not valid, `al` = 100
+get_dec_2           proc
+                    push    bx
+                    push    ax
+
+                    call    get_char                                            ; get char, store in `al`
+
+                    cmp     al, 13                                              ; is `al` cret / Enter?
+                    je      get_dec_2_err                                       ; if so, error out
+
+
+                    call    convert_ascii_dec                                   ; convert to decimal
+                    cmp     al, 0                                               ; if 0 <= `al` <= 9 isn't true, error out
+                    jl      get_dec_2_err
+                    cmp     al, 9
+                    jg      get_dec_2_err
+
+                    mov     bl, al                                              ; `bl` <- `al` : store 1st num in `bl`
+
+                    call    get_char                                            ; get another char
+
+                    cmp     al, 13                                              ; is `al` cret / Enter?
+                    je      get_dec_2_ok                                        ; if so, skip multiplying the first number by 10
+
+                    call    convert_ascii_dec                                   ; convert to decimal
+                    cmp     al, 0                                               ; if 0 <= `al` <= 9 isn't true, error out
+                    jl      get_dec_2_err
+                    cmp     al, 9
+                    jg      get_dec_2_err
+
+                    mov     bh, al                                              ; `bh` <- `al` : store 2nd num in `bh`
+                    mov     al, bl                                              ; `al` <- `bl` : store 1st num in `al`
+                    mov     bl, 10                                              ; `bl` <- 10
+                    mul     bl                                                  ; `al` <- `al` * `bl` : multiply 1st num by 10
+                    add     al, bh                                              ; `al` <- `al` + `bh` : add 1st num and 2nd num
+
+                    mov     bl, al                                              ; `bl` <- `al`
+
+                    lea     dx, txt_newline                                         ; print a newline
+                    call    print
+
+                    jmp     get_dec_2_ok
+  get_dec_2_err:
+                    mov     bl, 100                                             ; `bl` <- 100 : set the return value to 100, to mean that the value is invalid.
+                    lea     dx, txt_newline                                         ; print a newline
+                    call    print
+  get_dec_2_ok:
+                    pop     ax                                                  ; restore original `ax`
+                    mov     al, bl                                              ; `al` <- `bl`
+                    pop     bx                                                  ; restore original `bx`
+
+                    ret
+get_dec_2           endp
 
 clear_screen        proc
                     push    dx
@@ -177,80 +237,17 @@ clear_screen        proc
                     ret
 clear_screen        endp
 
+; wait for a single key press before continuing
+wait_for_input      proc
+                    push    ax
+                    call    get_char
+                    pop     ax
+                    ret
+wait_for_input      endp
+
 ; Procedures -- Drawing ----------------------------------------------------------------------------------------------------------------------------------------
 
-leds                proc
-
-                    mov     ah, 09h
-
-                    mov     al, led_index
-  leds_loop:
-                    call    led_draw
-
-                    inc     al
-
-                    cmp     al, led_asize
-                    jne     leds_loop
-
-                    ret
-leds                endp
-
-; draws the LED, index `al`
-led_draw            proc
-                    push    dx
-                    push    bx
-
-                    mov     bh, 0                                               ; BH | page number (0..7)
-
-                    mov     dl, led_x                                           ; DH | row
-                    add     dl, al
-                    mov     dh, led_y                                           ; DL | column
-                    add     dh, al
-
-                    mov     ah, 02h                                             ; int 10h/02h
-                    int     10h
-
-                    mov     bl, led_size
-                    add     bl, al
-
-                    push    ax
-
-                    mov     cl, bl
-                    mov     ch, bl
-  led_draw_h:
-    led_draw_w:
-                    mov     al, "#"
-                    mov     ah, 02h
-                    int     21h
-
-                    dec     cl
-                    cmp     cl, 0
-                    jnz     led_draw_w
-    ;led_draw_w
-                    dec     ch
-                    cmp     ch, 0
-                    jnz     led_draw_ex
-
-                    mov     ah, 03h
-                    int     10h
-
-                    inc     dh
-                    sub     dl, bl
-
-                    mov     ah, 02h
-                    int     10h
-
-                    jmp     led_draw_h
-  ;led_draw_h
-
-  led_draw_ex:
-
-                    pop     ax
-
-                    pop     bx
-                    pop     dx
-                    ret
-led_draw            endp
+; FIXME
 
 ; Main procedure -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -265,13 +262,14 @@ main                proc
 
                     cmp     al, 0                                               ; 0 -> Sair do programa
                     je      exit
-                    cmp     al, 1                                               ; 1 -> Ir para o menu 1 (Selecionar padr„o)
+                    cmp     al, 1                                               ; 1 -> Ir para o menu 1 (Selecionar padr√£o)
                     je      menu_1
                     cmp     al, 2                                               ; 2 -> Ir para o menu 2 (Alterar LEDs)
                     je      menu_2
                     cmp     al, 3                                               ; 3 -> Visualizar leds
                     je      leds_view
-  menu_1: ; -------------------------------------------------------------------- MENU 1 - Selecionar padr„o ----------------------------------------------------
+
+  menu_1: ; -------------------------------------------------------------------- MENU 1 - Selecionar padr√£o ----------------------------------------------------
                     call    clear_screen
                     lea     dx, txt_menu_1
                     call    print
@@ -288,6 +286,7 @@ main                proc
                     je      option_1_3
                     cmp     al, 4                                               ; 4 -> Alternados (alt)
                     je      option_1_4
+
   menu_2: ; -------------------------------------------------------------------- MENU 2 - Alterar LEDs ---------------------------------------------------------
                     call    clear_screen
                     lea     dx, txt_menu_2
@@ -299,8 +298,9 @@ main                proc
                     je      menu_0
                     cmp     al, 1                                               ; 1 -> Alterar todos
                     je      menu_2_1
-                    cmp     al, 2                                               ; 2 -> Alterar LED especÌfico
+                    cmp     al, 2                                               ; 2 -> Alterar LED espec√≠fico
                     je      menu_2_2
+
   menu_2_1: ; ------------------------------------------------------------------ MENU 2_1 - Atributos do(s) LED(s) ---------------------------------------------
                     call    clear_screen
                     lea     dx, txt_menu_2_1
@@ -315,45 +315,142 @@ main                proc
                     je      menu_0
                     cmp     al, 1                                               ; 1 -> Cor
                     je      option_2_1_1
-                    cmp     al, 2                                               ; 2 -> PosiÁ„o X
+                    cmp     al, 2                                               ; 2 -> Posi√ß√£o X
                     je      option_2_1_2
-                    cmp     al, 3                                               ; 3 -> PosiÁ„o Y
+                    cmp     al, 3                                               ; 3 -> Posi√ß√£o Y
                     je      option_2_1_3
-                    cmp     al, 4                                               ; 4 -> Dimens„o
+                    cmp     al, 4                                               ; 4 -> Dimens√£o
                     je      option_2_1_4
 
   menu_2_2: ; ------------------------------------------------------------------ MENU 2_2 - Selecione um LED ---------------------------------------------------
                     ; FIXME
                     jmp     menu_2_1
 
-  option_1_1: ; ---------------------------------------------------------------- MENU 1, OP«√O 1 - Todos desligados --------------------------------------------
+  option_1_1: ; ---------------------------------------------------------------- MENU 1, OP√á√ÉO 1 - Todos desligados --------------------------------------------
                     ; FIXME
                     jmp     menu_0
-  option_1_2: ; ---------------------------------------------------------------- MENU 1, OP«√O 2 - Todos ligados -----------------------------------------------
+  option_1_2: ; ---------------------------------------------------------------- MENU 1, OP√á√ÉO 2 - Todos ligados -----------------------------------------------
                     ; FIXME
                     jmp     menu_0
-  option_1_3: ; ---------------------------------------------------------------- MENU 1, OP«√O 3 - Alternados --------------------------------------------------
+  option_1_3: ; ---------------------------------------------------------------- MENU 1, OP√á√ÉO 3 - Alternados --------------------------------------------------
                     ; FIXME
                     jmp     menu_0
-  option_1_4: ; ---------------------------------------------------------------- MENU 1, OP«√O 4 - Alternados (alt) --------------------------------------------
+  option_1_4: ; ---------------------------------------------------------------- MENU 1, OP√á√ÉO 4 - Alternados (alt) --------------------------------------------
                     ; FIXME
                     jmp     menu_0
 
-  option_2_1_1: ; -------------------------------------------------------------- MENU 2_1, OP«√O 1 - CÙr -------------------------------------------------------
-                    ; FIXME
+  option_2_1_1: ; -------------------------------------------------------------- MENU 2_1, OP√á√ÉO 1 - C√¥r -------------------------------------------------------
+                    lea     dx, txt_colors
+                    call    print
+    pick_color_init:
+                    lea     dx, txt_newline
+                    call    print
+                    lea     dx, txt_pick_color
+                    call    print
+
+                    call    get_char                                            ; get character, store in `al`
+
+                                                                                ; next we need to make sure the character is in one of these ranges:
+                                                                                ; 48-57  - 0-9
+                                                                                ; 65-70  - A-F
+                                                                                ; 97-102 - a-f
+
+                    cmp     al, 97                                              ; `al` >= 97?
+                    jge     pick_color_rg3                                      ; move on to next check
+                    cmp     al, 65                                              ; `al` >= 65?
+                    jge     pick_color_rg2
+                    cmp     al, 48                                              ; `al` >= 48?
+                    jge     pick_color_rg1
+                    jmp     pick_color_init                                     ; start over if none of these confirm
+
+    pick_color_rg1:
+                    cmp     al, 57                                              ; `al` >= 57?
+                    jle     pick_color_ok                                       ; if so, move on to convert to hex
+                    jmp     pick_color_init                                     ; otherwise start over
+    pick_color_rg2:
+                    cmp     al, 70                                              ; `al` >= 70?
+                    jle     pick_color_ok
+                    jmp     pick_color_init
+    pick_color_rg3:
+                    cmp     al, 102                                             ; `al` >= 102?
+                    jle     pick_color_ok
+                    jmp     pick_color_init
+    pick_color_ok:
+                    call    convert_ascii_hex                                   ; convert ascii in `al` to hex
+
+                    cmp     ah, 1
+                    je      pick_color_one
+                    cmp     ah, 2
+                    je      pick_color_all
+
+    pick_color_one:
+                    ;FIXME change color in the selected LED
+                    jmp     pick_color_exit
+    pick_color_all:
+                    ;FIXME change color in all LEDs
+                    jmp     pick_color_exit
+
+    pick_color_exit:
                     jmp     menu_2_1
-  option_2_1_2: ; -------------------------------------------------------------- MENU 2_1, OP«√O 2 - PosiÁ„o X -------------------------------------------------
-                    ; FIXME
+  option_2_1_2: ; -------------------------------------------------------------- MENU 2_1, OP√á√ÉO 2 - Posi√ß√£o X -------------------------------------------------
+                    lea     dx, txt_newline
+                    call    print
+                    lea     dx, txt_pick_pos_x
+                    call    print
+
+                    call    get_dec_2                                           ; get a 2 digit decimal value
+                    cmp     al, 100                                             ; if there's an error, start over
+                    je      option_2_1_2
+
+                    cmp     ah, 1
+                    je      pick_color_one
+                    cmp     ah, 2
+                    je      pick_color_all
+
+    pick_pos_x_one:
+                    ;FIXME change in selected led
+                    jmp     pick_pos_x_exit
+    pick_pos_x_all:
+                    ;FIXME change in all leds
+                    jmp     pick_pos_x_exit
+
+    pick_pos_x_exit:
                     jmp     menu_2_1
-  option_2_1_3: ; -------------------------------------------------------------- MENU 2_1, OP«√O 3 - PosiÁ„o Y -------------------------------------------------
-                    ; FIXME
+  option_2_1_3: ; -------------------------------------------------------------- MENU 2_1, OP√á√ÉO 3 - Posi√ß√£o Y -------------------------------------------------
+                    lea     dx, txt_newline
+                    call    print
+                    lea     dx, txt_pick_pos_y
+                    call    print
+
+                    call    get_dec_2                                           ; get a 2 digit decimal value
+                    cmp     al, 100                                             ; if there's an error, start over
+                    je      option_2_1_3
+
+                    cmp     ah, 1
+                    je      pick_pos_x_one
+                    cmp     ah, 2
+                    je      pick_pos_x_all
+
+    pick_pos_y_one:
+                    ;FIXME change in selected led
+                    jmp     pick_pos_y_exit
+    pick_pos_y_all:
+                    ;FIXME change in all leds
+                    jmp     pick_pos_y_exit
+
+    pick_pos_y_exit:
                     jmp     menu_2_1
-  option_2_1_4: ; -------------------------------------------------------------- MENU 2_1, OP«√O 4 - Dimens„o --------------------------------------------------
+  option_2_1_4: ; -------------------------------------------------------------- MENU 2_1, OP√á√ÉO 4 - Dimens√£o --------------------------------------------------
                     ; FIXME
                     jmp     menu_2_1
 
-  leds_view:
+  leds_view: ; ----------------------------------------------------------------- MENU 0, OP√á√ÉO 3 - Visualizar LEDs ---------------------------------------------
                     ; FIXME
+                    call    clear_screen
+                    lea     dx, txt_colors
+                    call    print
+                    call    wait_for_input
+                    jmp     menu_0
 
 ; --------------------------------------------------------------------------------------------------------------------------------------------------------------
   exit:
