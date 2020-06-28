@@ -1,7 +1,9 @@
 * text eol=lf
 * text encoding=utf-8
 
-*.asm text=crlf
-*.asm encoding=iso88591
-*.inc text=crlf
-*.inc encoding=iso88591
+*.asm text eol=crlf
+*.asm text encoding=ISO-8859-1
+*.asm text working-tree-encoding=ISO-8859-1
+*.inc text eol=crlf
+*.inc text encoding=ISO-8859-1
+*.inc text working-tree-encoding=ISO-8859-1
