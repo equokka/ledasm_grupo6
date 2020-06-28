@@ -441,7 +441,32 @@ main                proc
     pick_pos_y_exit:
                     jmp     menu_2_1
   option_2_1_4: ; -------------------------------------------------------------- MENU 2_1, OPÇÃO 4 - Dimensão --------------------------------------------------
-                    ; FIXME
+                    lea     dx, txt_newline
+                    call    print
+                    lea     dx, txt_pick_size
+                    call    print
+
+                    call    get_char                                            ; get char, store in `al`
+                    call    convert_ascii_dec                                   ; convert `al` to decimal
+
+                    cmp     al, 1                                               ; 1 <= `al` <= 5, otherwise try again
+                    jl      option_2_1_4
+                    cmp     al, 5
+                    jg      option_2_1_4
+
+                    cmp     ah, 1
+                    je      pick_size_one
+                    cmp     ah, 2
+                    je      pick_size_all
+
+    pick_size_one:
+                    ;FIXME change in selected led
+                    jmp     pick_size_exit
+    pick_size_all:
+                    ;FIXME change in all leds
+                    jmp     pick_size_exit
+
+    pick_size_exit:
                     jmp     menu_2_1
 
   leds_view: ; ----------------------------------------------------------------- MENU 0, OPÇÃO 3 - Visualizar LEDs ---------------------------------------------
