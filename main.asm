@@ -1,38 +1,38 @@
-                    title   AC Projeto PrÃÂ¡tico - Grupo 6
-                            ; O grupo 6 ÃÂ© constituÃÂ­do por:
-                            ; * Daniel ConceiÃÂ§ÃÂ£o
+                    title   AC Projeto PrÃÂÃÂÃÂÃÂ¡tico - Grupo 6
+                            ; O grupo 6 ÃÂÃÂÃÂÃÂ© constituÃÂÃÂÃÂÃÂ­do por:
+                            ; * Daniel ConceiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o
                             ; * Filipe Correia
                             ; * Pedro Filipe
 
 ; Objetivos:
-; * Dado um conjunto de oito lÃÂ¢mpadas (leds, sinais luminosos), numeradas de 0 a
-;   7, permitir a escolha de vÃÂ¡rias  alternativas de padrÃÂµes (combinaÃÂ§ÃÂµes) de
+; * Dado um conjunto de oito lÃÂÃÂÃÂÃÂ¢mpadas (leds, sinais luminosos), numeradas de 0 a
+;   7, permitir a escolha de vÃÂÃÂÃÂÃÂ¡rias  alternativas de padrÃÂÃÂÃÂÃÂµes (combinaÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂµes) de
 ;   luzes coloridas:
 ;   * todas desligada (apagadas);                                               [ ]
 ;   * todas acesas (ligadas);                                                   [ ]
-;   * em alternÃÂ¢ncia: ligadas (0, 2, 4, 6), desligadas (1, 3, 5, 7);            [ ]
-; * Definir a cor da luz, a posiÃÂ§ÃÂ£o (linha e coluna) das lÃÂ¢mpadas e a dimensÃÂ£o
+;   * em alternÃÂÃÂÃÂÃÂ¢ncia: ligadas (0, 2, 4, 6), desligadas (1, 3, 5, 7);            [ ]
+; * Definir a cor da luz, a posiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o (linha e coluna) das lÃÂÃÂÃÂÃÂ¢mpadas e a dimensÃÂÃÂÃÂÃÂ£o
 ;   (um ou mais caracteres).                                                    [ ]
 
 ; Requisitos:
 ; * Estruturar o programa usando procedimentos (nomeadamente para a entrada dos
-;   dados), variÃÂ¡veis (incluindo vetores, se adequado) e constantes.            [ ]
-; * Incluir um "menu" inicial que permita a escolher a operaÃÂ§ÃÂ£o a executar.     [ ]
-; * Prevenir e detetar a ocorrÃÂªncia de erros na leitura dos dados (validaÃÂ§ÃÂ£o).  [ ]
-; * Documentar devidamente o cÃÂ³digo, acrescentando comentÃÂ¡rios ao programa
+;   dados), variÃÂÃÂÃÂÃÂ¡veis (incluindo vetores, se adequado) e constantes.            [ ]
+; * Incluir um "menu" inicial que permita a escolher a operaÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o a executar.     [ ]
+; * Prevenir e detetar a ocorrÃÂÃÂÃÂÃÂªncia de erros na leitura dos dados (validaÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o).  [ ]
+; * Documentar devidamente o cÃÂÃÂÃÂÃÂ³digo, acrescentando comentÃÂÃÂÃÂÃÂ¡rios ao programa
 ;   fonte, ou em documento separado, indicando:
-;   * Procedimentos definidos e forma de passagem de parÃÂ¢metros;                [ ]
+;   * Procedimentos definidos e forma de passagem de parÃÂÃÂÃÂÃÂ¢metros;                [ ]
 ;   * Algoritmo(s) implementado(s);                                             [ ]
-;   * LimitaÃÂ§ÃÂµes do programa (valores das variÃÂ¡veis) e situaÃÂ§ÃÂµes nÃÂ£o
+;   * LimitaÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂµes do programa (valores das variÃÂÃÂÃÂÃÂ¡veis) e situaÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂµes nÃÂÃÂÃÂÃÂ£o
 ;     contempladas.                                                             [ ]
-;   * Atender a questÃÂµes de eficiÃÂªncia: minimizar o nÃÂº de instruÃÂ§ÃÂµes e o nÃÂº de
-;     variÃÂ¡veis (memÃÂ³ria ocupada)                                               [ ]
+;   * Atender a questÃÂÃÂÃÂÃÂµes de eficiÃÂÃÂÃÂÃÂªncia: minimizar o nÃÂÃÂÃÂÃÂº de instruÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂµes e o nÃÂÃÂÃÂÃÂº de
+;     variÃÂÃÂÃÂÃÂ¡veis (memÃÂÃÂÃÂÃÂ³ria ocupada)                                               [ ]
 ;
 ; ---
 ;
-; * Entrega intermÃÂ©dia: estrutura do programa, ecrÃÂ£ inicial e variÃÂ¡veis e
+; * Entrega intermÃÂÃÂÃÂÃÂ©dia: estrutura do programa, ecrÃÂÃÂÃÂÃÂ£ inicial e variÃÂÃÂÃÂÃÂ¡veis e
 ;   procedimentos a definir.                                                    [x]
-; * ApresentaÃÂ§ÃÂ£o oral e demonstraÃÂ§ÃÂ£o.                                           [ ]
+; * ApresentaÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o oral e demonstraÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o.                                           [ ]
 
 ; --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ led_y               db      0,1,2,3,4,5,0,0 ; 8 dup (0)
 led_size            db      8 dup (1)
 led_color           db      8 dup (0Fh) ; bright white
 
-; CÃÂ´r para LEDs desligados
+; CÃÂÃÂÃÂÃÂ´r para LEDs desligados
 color_disabled      db      08h ; gray
 
 ; Strings
@@ -64,36 +64,36 @@ txt_colors          db      " ________________________________ ", 0ah,0dh
 
 txt_menu_0          db      " ::: ledasm_grupo6 :::            ", 0ah,0dh
                     db      " 0 - Desligar                     ", 0ah,0dh
-                    db      " 1 - Selecionar padrÃÂ£o            ", 0ah,0dh
+                    db      " 1 - Selecionar padrÃÂÃÂÃÂÃÂ£o            ", 0ah,0dh
                     db      " 2 - Alterar LEDs                 ", 0ah,0dh
                     db      " 3 - Visualizar LEDs              ", 0ah,0dh,24h
 
-txt_menu_1          db      " ::: Selecionar padrÃÂ£o :::        ", 0ah,0dh
-                    db      " 0 - Voltar a trÃÂ¡s                ", 0ah,0dh
+txt_menu_1          db      " ::: Selecionar padrÃÂÃÂÃÂÃÂ£o :::        ", 0ah,0dh
+                    db      " 0 - Voltar a trÃÂÃÂÃÂÃÂ¡s                ", 0ah,0dh
                     db      " 1 - Todos desligados             ", 0ah,0dh
                     db      " 2 - Todos ligados                ", 0ah,0dh
                     db      " 3 - Alternados                   ", 0ah,0dh
                     db      " 4 - Alternados (alt)             ", 0ah,0dh,24h
 
 txt_menu_2          db      " ::: Alterar LEDs :::             ", 0ah,0dh
-                    db      " 0 - Voltar a trÃÂ¡s                ", 0ah,0dh
+                    db      " 0 - Voltar a trÃÂÃÂÃÂÃÂ¡s                ", 0ah,0dh
                     db      " 1 - Alterar todos                ", 0ah,0dh
-                    db      " 2 - Alterar LED especÃÂ­fico       ", 0ah,0dh,24h
+                    db      " 2 - Alterar LED especÃÂÃÂÃÂÃÂ­fico       ", 0ah,0dh,24h
 
 txt_menu_2_1        db      " ::: Alterar LEDs :::             ", 0ah,0dh
-                    db      " 0 - Voltar a trÃÂ¡s                ", 0ah,0dh
+                    db      " 0 - Voltar a trÃÂÃÂÃÂÃÂ¡s                ", 0ah,0dh
                     db      " 1 - Cor                          ", 0ah,0dh
-                    db      " 2 - PosiÃÂ§ÃÂ£o X                    ", 0ah,0dh
-                    db      " 3 - PosiÃÂ§ÃÂ£o Y                    ", 0ah,0dh
-                    db      " 4 - DimensÃÂ£o                     ", 0ah,0dh,24h
+                    db      " 2 - PosiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o X                    ", 0ah,0dh
+                    db      " 3 - PosiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o Y                    ", 0ah,0dh
+                    db      " 4 - DimensÃÂÃÂÃÂÃÂ£o                     ", 0ah,0dh,24h
 
-txt_option          db      " OpÃÂ§ÃÂ£o: ", 24h
+txt_option          db      " OpÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o: ", 24h
 
 txt_pick_led        db      " LED # (1-8): ", 24h
-txt_pick_color      db      " CÃÂ´r: ", 24h
-txt_pick_pos_x      db      " PosiÃÂ§ÃÂ£o X: ", 24h
-txt_pick_pos_y      db      " PosiÃÂ§ÃÂ£o Y: ", 24h
-txt_pick_size       db      " DimensÃÂ£o: ", 24h
+txt_pick_color      db      " CÃÂÃÂÃÂÃÂ´r: ", 24h
+txt_pick_pos_x      db      " PosiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o X: ", 24h
+txt_pick_pos_y      db      " PosiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o Y: ", 24h
+txt_pick_size       db      " DimensÃÂÃÂÃÂÃÂ£o: ", 24h
 
 txt_newline         db      0ah,0dh,24h
 txt_clear_screen    db      30 dup(0ah,0dh), 24h                                ; literally just 30 newlines
@@ -248,7 +248,37 @@ wait_for_input      endp
 
 ; Procedures -- Drawing ----------------------------------------------------------------------------------------------------------------------------------------
 
-; FIXME
+; Draw one character at (`dl`, `dh`) with color `cl`
+draw                proc
+                    push    ax
+                    push    si
+                    push    bx
+
+                    mov     bh, 0                                               ; BH = Page Number
+
+                    mov     ah, 02h                                             ; int 10h/ah=02h - Set Cursor Position
+                    int     10h                                                 ; https://dos4gw.org/INT_10h_02h_2_Set_Cursor_Position
+
+                    mov     bl, cl                                              ; `bl` <- `cl` : pass color in `cl` to `bl` which is used by int 10h/ah=09h
+                    shl     bl, 4                                               ; shift `bl` to the left 4 bits, ie 0444 -> 0444 0000
+                    add     bl, cl                                              ; add `cl` ie 0444 0000 -> 0444 0444. this way bg = fg color
+
+                    push    cx                                                  ; store original `cx`
+
+                    mov     al, " "
+                    mov     cx, 1                                               ; Number of times to print character
+
+                    mov     ah, 09h                                             ; int 10h/ah=09h - Write Character and Attribute at Cursor
+                    int     10h                                                 ; https://dos4gw.org/INT_10h_09h_9_Write_Character_and_Attribute_at_Cursor
+
+                    pop     cx
+                    pop     bx
+                    pop     si
+                    pop     ax
+
+                    ret
+draw                endp
+
 
 ; Main procedure -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -263,14 +293,14 @@ main                proc
 
                     cmp     al, 0                                               ; 0 -> Sair do programa
                     je      exit
-                    cmp     al, 1                                               ; 1 -> Ir para o menu 1 (Selecionar padrÃÂ£o)
+                    cmp     al, 1                                               ; 1 -> Ir para o menu 1 (Selecionar padrÃÂÃÂÃÂÃÂ£o)
                     je      menu_1
                     cmp     al, 2                                               ; 2 -> Ir para o menu 2 (Alterar LEDs)
                     je      menu_2
                     cmp     al, 3                                               ; 3 -> Visualizar leds
                     je      leds_view
 
-  menu_1: ; -------------------------------------------------------------------- MENU 1 - Selecionar padrÃÂ£o ----------------------------------------------------
+  menu_1: ; -------------------------------------------------------------------- MENU 1 - Selecionar padrÃÂÃÂÃÂÃÂ£o ----------------------------------------------------
                     call    clear_screen
                     lea     dx, txt_menu_1
                     call    print
@@ -299,7 +329,7 @@ main                proc
                     je      menu_0
                     cmp     al, 1                                               ; 1 -> Alterar todos
                     je      menu_2_1
-                    cmp     al, 2                                               ; 2 -> Alterar LED especÃÂ­fico
+                    cmp     al, 2                                               ; 2 -> Alterar LED especÃÂÃÂÃÂÃÂ­fico
                     je      menu_2_2
 
   menu_2_1: ; ------------------------------------------------------------------ MENU 2_1 - Atributos do(s) LED(s) ---------------------------------------------
@@ -316,31 +346,31 @@ main                proc
                     je      menu_0
                     cmp     al, 1                                               ; 1 -> Cor
                     je      option_2_1_1
-                    cmp     al, 2                                               ; 2 -> PosiÃÂ§ÃÂ£o X
+                    cmp     al, 2                                               ; 2 -> PosiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o X
                     je      option_2_1_2
-                    cmp     al, 3                                               ; 3 -> PosiÃÂ§ÃÂ£o Y
+                    cmp     al, 3                                               ; 3 -> PosiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o Y
                     je      option_2_1_3
-                    cmp     al, 4                                               ; 4 -> DimensÃÂ£o
+                    cmp     al, 4                                               ; 4 -> DimensÃÂÃÂÃÂÃÂ£o
                     je      option_2_1_4
 
   menu_2_2: ; ------------------------------------------------------------------ MENU 2_2 - Selecione um LED ---------------------------------------------------
                     ; FIXME
                     jmp     menu_2_1
 
-  option_1_1: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂO 1 - Todos desligados --------------------------------------------
+  option_1_1: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂO 1 - Todos desligados --------------------------------------------
                     ; FIXME
                     jmp     menu_0
-  option_1_2: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂO 2 - Todos ligados -----------------------------------------------
+  option_1_2: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂO 2 - Todos ligados -----------------------------------------------
                     ; FIXME
                     jmp     menu_0
-  option_1_3: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂO 3 - Alternados --------------------------------------------------
+  option_1_3: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂO 3 - Alternados --------------------------------------------------
                     ; FIXME
                     jmp     menu_0
-  option_1_4: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂO 4 - Alternados (alt) --------------------------------------------
+  option_1_4: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂO 4 - Alternados (alt) --------------------------------------------
                     ; FIXME
                     jmp     menu_0
 
-  option_2_1_1: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂO 1 - CÃÂ´r -------------------------------------------------------
+  option_2_1_1: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂO 1 - CÃÂÃÂÃÂÃÂ´r -------------------------------------------------------
                     lea     dx, txt_colors
                     call    print
     pick_color_init:
@@ -393,7 +423,7 @@ main                proc
 
     pick_color_exit:
                     jmp     menu_2_1
-  option_2_1_2: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂO 2 - PosiÃÂ§ÃÂ£o X -------------------------------------------------
+  option_2_1_2: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂO 2 - PosiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o X -------------------------------------------------
                     lea     dx, txt_newline
                     call    print
                     lea     dx, txt_pick_pos_x
@@ -417,7 +447,7 @@ main                proc
 
     pick_pos_x_exit:
                     jmp     menu_2_1
-  option_2_1_3: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂO 3 - PosiÃÂ§ÃÂ£o Y -------------------------------------------------
+  option_2_1_3: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂO 3 - PosiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o Y -------------------------------------------------
                     lea     dx, txt_newline
                     call    print
                     lea     dx, txt_pick_pos_y
@@ -441,7 +471,7 @@ main                proc
 
     pick_pos_y_exit:
                     jmp     menu_2_1
-  option_2_1_4: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂO 4 - DimensÃÂ£o --------------------------------------------------
+  option_2_1_4: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂO 4 - DimensÃÂÃÂÃÂÃÂ£o --------------------------------------------------
                     lea     dx, txt_newline
                     call    print
                     lea     dx, txt_pick_size
@@ -470,7 +500,7 @@ main                proc
     pick_size_exit:
                     jmp     menu_2_1
 
-  leds_view: ; ----------------------------------------------------------------- MENU 0, OPÃÂÃÂO 3 - Visualizar LEDs ---------------------------------------------
+  leds_view: ; ----------------------------------------------------------------- MENU 0, OPÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂO 3 - Visualizar LEDs ---------------------------------------------
                     ; FIXME
                     call    clear_screen
                     lea     dx, txt_colors
