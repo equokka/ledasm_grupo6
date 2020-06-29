@@ -1,38 +1,38 @@
-                    title   AC Projeto Prático - Grupo 6
-                            ; O grupo 6 é constituído por:
-                            ; * Daniel Conceição
+                    title   AC Projeto PrÃÂ¡tico - Grupo 6
+                            ; O grupo 6 ÃÂ© constituÃÂ­do por:
+                            ; * Daniel ConceiÃÂ§ÃÂ£o
                             ; * Filipe Correia
                             ; * Pedro Filipe
 
 ; Objetivos:
-; * Dado um conjunto de oito lâmpadas (leds, sinais luminosos), numeradas de 0 a
-;   7, permitir a escolha de várias  alternativas de padrões (combinações) de
+; * Dado um conjunto de oito lÃÂ¢mpadas (leds, sinais luminosos), numeradas de 0 a
+;   7, permitir a escolha de vÃÂ¡rias  alternativas de padrÃÂµes (combinaÃÂ§ÃÂµes) de
 ;   luzes coloridas:
 ;   * todas desligada (apagadas);                                               [ ]
 ;   * todas acesas (ligadas);                                                   [ ]
-;   * em alternância: ligadas (0, 2, 4, 6), desligadas (1, 3, 5, 7);            [ ]
-; * Definir a cor da luz, a posição (linha e coluna) das lâmpadas e a dimensão
+;   * em alternÃÂ¢ncia: ligadas (0, 2, 4, 6), desligadas (1, 3, 5, 7);            [ ]
+; * Definir a cor da luz, a posiÃÂ§ÃÂ£o (linha e coluna) das lÃÂ¢mpadas e a dimensÃÂ£o
 ;   (um ou mais caracteres).                                                    [ ]
 
 ; Requisitos:
 ; * Estruturar o programa usando procedimentos (nomeadamente para a entrada dos
-;   dados), variáveis (incluindo vetores, se adequado) e constantes.            [ ]
-; * Incluir um "menu" inicial que permita a escolher a operação a executar.     [ ]
-; * Prevenir e detetar a ocorrência de erros na leitura dos dados (validação).  [ ]
-; * Documentar devidamente o código, acrescentando comentários ao programa
+;   dados), variÃÂ¡veis (incluindo vetores, se adequado) e constantes.            [ ]
+; * Incluir um "menu" inicial que permita a escolher a operaÃÂ§ÃÂ£o a executar.     [ ]
+; * Prevenir e detetar a ocorrÃÂªncia de erros na leitura dos dados (validaÃÂ§ÃÂ£o).  [ ]
+; * Documentar devidamente o cÃÂ³digo, acrescentando comentÃÂ¡rios ao programa
 ;   fonte, ou em documento separado, indicando:
-;   * Procedimentos definidos e forma de passagem de parâmetros;                [ ]
+;   * Procedimentos definidos e forma de passagem de parÃÂ¢metros;                [ ]
 ;   * Algoritmo(s) implementado(s);                                             [ ]
-;   * Limitações do programa (valores das variáveis) e situações não
+;   * LimitaÃÂ§ÃÂµes do programa (valores das variÃÂ¡veis) e situaÃÂ§ÃÂµes nÃÂ£o
 ;     contempladas.                                                             [ ]
-;   * Atender a questões de eficiência: minimizar o nº de instruções e o nº de
-;     variáveis (memória ocupada)                                               [ ]
+;   * Atender a questÃÂµes de eficiÃÂªncia: minimizar o nÃÂº de instruÃÂ§ÃÂµes e o nÃÂº de
+;     variÃÂ¡veis (memÃÂ³ria ocupada)                                               [ ]
 ;
 ; ---
 ;
-; * Entrega intermédia: estrutura do programa, ecrã inicial e variáveis e
+; * Entrega intermÃÂ©dia: estrutura do programa, ecrÃÂ£ inicial e variÃÂ¡veis e
 ;   procedimentos a definir.                                                    [x]
-; * Apresentação oral e demonstração.                                           [ ]
+; * ApresentaÃÂ§ÃÂ£o oral e demonstraÃÂ§ÃÂ£o.                                           [ ]
 
 ; --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ led_y               db      0,1,2,3,4,5,0,0 ; 8 dup (0)
 led_size            db      8 dup (1)
 led_color           db      8 dup (0Fh) ; bright white
 
-; Côr para LEDs desligados
+; CÃÂ´r para LEDs desligados
 color_disabled      db      08h ; gray
 
 ; Strings
@@ -64,36 +64,36 @@ txt_colors          db      " ________________________________ ", 0ah,0dh
 
 txt_menu_0          db      " ::: ledasm_grupo6 :::            ", 0ah,0dh
                     db      " 0 - Desligar                     ", 0ah,0dh
-                    db      " 1 - Selecionar padrão            ", 0ah,0dh
+                    db      " 1 - Selecionar padrÃÂ£o            ", 0ah,0dh
                     db      " 2 - Alterar LEDs                 ", 0ah,0dh
                     db      " 3 - Visualizar LEDs              ", 0ah,0dh,24h
 
-txt_menu_1          db      " ::: Selecionar padrão :::        ", 0ah,0dh
-                    db      " 0 - Voltar a trás                ", 0ah,0dh
+txt_menu_1          db      " ::: Selecionar padrÃÂ£o :::        ", 0ah,0dh
+                    db      " 0 - Voltar a trÃÂ¡s                ", 0ah,0dh
                     db      " 1 - Todos desligados             ", 0ah,0dh
                     db      " 2 - Todos ligados                ", 0ah,0dh
                     db      " 3 - Alternados                   ", 0ah,0dh
                     db      " 4 - Alternados (alt)             ", 0ah,0dh,24h
 
 txt_menu_2          db      " ::: Alterar LEDs :::             ", 0ah,0dh
-                    db      " 0 - Voltar a trás                ", 0ah,0dh
+                    db      " 0 - Voltar a trÃÂ¡s                ", 0ah,0dh
                     db      " 1 - Alterar todos                ", 0ah,0dh
-                    db      " 2 - Alterar LED específico       ", 0ah,0dh,24h
+                    db      " 2 - Alterar LED especÃÂ­fico       ", 0ah,0dh,24h
 
 txt_menu_2_1        db      " ::: Alterar LEDs :::             ", 0ah,0dh
-                    db      " 0 - Voltar a trás                ", 0ah,0dh
+                    db      " 0 - Voltar a trÃÂ¡s                ", 0ah,0dh
                     db      " 1 - Cor                          ", 0ah,0dh
-                    db      " 2 - Posição X                    ", 0ah,0dh
-                    db      " 3 - Posição Y                    ", 0ah,0dh
-                    db      " 4 - Dimensão                     ", 0ah,0dh,24h
+                    db      " 2 - PosiÃÂ§ÃÂ£o X                    ", 0ah,0dh
+                    db      " 3 - PosiÃÂ§ÃÂ£o Y                    ", 0ah,0dh
+                    db      " 4 - DimensÃÂ£o                     ", 0ah,0dh,24h
 
-txt_option          db      " Opção: ", 24h
+txt_option          db      " OpÃÂ§ÃÂ£o: ", 24h
 
 txt_pick_led        db      " LED # (1-8): ", 24h
-txt_pick_color      db      " Côr: ", 24h
-txt_pick_pos_x      db      " Posição X: ", 24h
-txt_pick_pos_y      db      " Posição Y: ", 24h
-txt_pick_size       db      " Dimensão: ", 24h
+txt_pick_color      db      " CÃÂ´r: ", 24h
+txt_pick_pos_x      db      " PosiÃÂ§ÃÂ£o X: ", 24h
+txt_pick_pos_y      db      " PosiÃÂ§ÃÂ£o Y: ", 24h
+txt_pick_size       db      " DimensÃÂ£o: ", 24h
 
 txt_newline         db      0ah,0dh,24h
 txt_clear_screen    db      30 dup(0ah,0dh), 24h                                ; literally just 30 newlines
@@ -240,7 +240,8 @@ clear_screen        endp
 ; wait for a single key press before continuing
 wait_for_input      proc
                     push    ax
-                    call    get_char
+                    mov     ah, 07h                                             ; int 21h/ah=08h - No Echo Console Input
+                    int     21h                                                 ; https://dos4gw.org/DOS_Fn_08H_No_Echo_Console_Input
                     pop     ax
                     ret
 wait_for_input      endp
@@ -262,14 +263,14 @@ main                proc
 
                     cmp     al, 0                                               ; 0 -> Sair do programa
                     je      exit
-                    cmp     al, 1                                               ; 1 -> Ir para o menu 1 (Selecionar padrão)
+                    cmp     al, 1                                               ; 1 -> Ir para o menu 1 (Selecionar padrÃÂ£o)
                     je      menu_1
                     cmp     al, 2                                               ; 2 -> Ir para o menu 2 (Alterar LEDs)
                     je      menu_2
                     cmp     al, 3                                               ; 3 -> Visualizar leds
                     je      leds_view
 
-  menu_1: ; -------------------------------------------------------------------- MENU 1 - Selecionar padrão ----------------------------------------------------
+  menu_1: ; -------------------------------------------------------------------- MENU 1 - Selecionar padrÃÂ£o ----------------------------------------------------
                     call    clear_screen
                     lea     dx, txt_menu_1
                     call    print
@@ -298,7 +299,7 @@ main                proc
                     je      menu_0
                     cmp     al, 1                                               ; 1 -> Alterar todos
                     je      menu_2_1
-                    cmp     al, 2                                               ; 2 -> Alterar LED específico
+                    cmp     al, 2                                               ; 2 -> Alterar LED especÃÂ­fico
                     je      menu_2_2
 
   menu_2_1: ; ------------------------------------------------------------------ MENU 2_1 - Atributos do(s) LED(s) ---------------------------------------------
@@ -315,31 +316,31 @@ main                proc
                     je      menu_0
                     cmp     al, 1                                               ; 1 -> Cor
                     je      option_2_1_1
-                    cmp     al, 2                                               ; 2 -> Posição X
+                    cmp     al, 2                                               ; 2 -> PosiÃÂ§ÃÂ£o X
                     je      option_2_1_2
-                    cmp     al, 3                                               ; 3 -> Posição Y
+                    cmp     al, 3                                               ; 3 -> PosiÃÂ§ÃÂ£o Y
                     je      option_2_1_3
-                    cmp     al, 4                                               ; 4 -> Dimensão
+                    cmp     al, 4                                               ; 4 -> DimensÃÂ£o
                     je      option_2_1_4
 
   menu_2_2: ; ------------------------------------------------------------------ MENU 2_2 - Selecione um LED ---------------------------------------------------
                     ; FIXME
                     jmp     menu_2_1
 
-  option_1_1: ; ---------------------------------------------------------------- MENU 1, OPÇÃO 1 - Todos desligados --------------------------------------------
+  option_1_1: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂO 1 - Todos desligados --------------------------------------------
                     ; FIXME
                     jmp     menu_0
-  option_1_2: ; ---------------------------------------------------------------- MENU 1, OPÇÃO 2 - Todos ligados -----------------------------------------------
+  option_1_2: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂO 2 - Todos ligados -----------------------------------------------
                     ; FIXME
                     jmp     menu_0
-  option_1_3: ; ---------------------------------------------------------------- MENU 1, OPÇÃO 3 - Alternados --------------------------------------------------
+  option_1_3: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂO 3 - Alternados --------------------------------------------------
                     ; FIXME
                     jmp     menu_0
-  option_1_4: ; ---------------------------------------------------------------- MENU 1, OPÇÃO 4 - Alternados (alt) --------------------------------------------
+  option_1_4: ; ---------------------------------------------------------------- MENU 1, OPÃÂÃÂO 4 - Alternados (alt) --------------------------------------------
                     ; FIXME
                     jmp     menu_0
 
-  option_2_1_1: ; -------------------------------------------------------------- MENU 2_1, OPÇÃO 1 - Côr -------------------------------------------------------
+  option_2_1_1: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂO 1 - CÃÂ´r -------------------------------------------------------
                     lea     dx, txt_colors
                     call    print
     pick_color_init:
@@ -392,7 +393,7 @@ main                proc
 
     pick_color_exit:
                     jmp     menu_2_1
-  option_2_1_2: ; -------------------------------------------------------------- MENU 2_1, OPÇÃO 2 - Posição X -------------------------------------------------
+  option_2_1_2: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂO 2 - PosiÃÂ§ÃÂ£o X -------------------------------------------------
                     lea     dx, txt_newline
                     call    print
                     lea     dx, txt_pick_pos_x
@@ -416,7 +417,7 @@ main                proc
 
     pick_pos_x_exit:
                     jmp     menu_2_1
-  option_2_1_3: ; -------------------------------------------------------------- MENU 2_1, OPÇÃO 3 - Posição Y -------------------------------------------------
+  option_2_1_3: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂO 3 - PosiÃÂ§ÃÂ£o Y -------------------------------------------------
                     lea     dx, txt_newline
                     call    print
                     lea     dx, txt_pick_pos_y
@@ -440,7 +441,7 @@ main                proc
 
     pick_pos_y_exit:
                     jmp     menu_2_1
-  option_2_1_4: ; -------------------------------------------------------------- MENU 2_1, OPÇÃO 4 - Dimensão --------------------------------------------------
+  option_2_1_4: ; -------------------------------------------------------------- MENU 2_1, OPÃÂÃÂO 4 - DimensÃÂ£o --------------------------------------------------
                     lea     dx, txt_newline
                     call    print
                     lea     dx, txt_pick_size
@@ -469,7 +470,7 @@ main                proc
     pick_size_exit:
                     jmp     menu_2_1
 
-  leds_view: ; ----------------------------------------------------------------- MENU 0, OPÇÃO 3 - Visualizar LEDs ---------------------------------------------
+  leds_view: ; ----------------------------------------------------------------- MENU 0, OPÃÂÃÂO 3 - Visualizar LEDs ---------------------------------------------
                     ; FIXME
                     call    clear_screen
                     lea     dx, txt_colors
