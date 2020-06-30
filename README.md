@@ -12,6 +12,7 @@ Se usar VS Code por favor adicione isto à sua configuração:
     "editor.rulers": [0, 20, 28, 80, 160],
     "editor.renderIndentGuides": false,
     "editor.wordWrap": "off",
+    "editor.detectIndentation": false,
     "editor.tabSize": 1,
     "editor.insertSpaces": true,
     "files.encoding": "iso88591"
