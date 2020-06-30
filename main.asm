@@ -8,25 +8,25 @@
 ; * Dado um conjunto de oito lâmpadas (leds, sinais luminosos), numeradas de 0 a
 ;   7, permitir a escolha de várias  alternativas de padrões (combinações) de
 ;   luzes coloridas:
-;   * todas desligada (apagadas);                                               [ ]
-;   * todas acesas (ligadas);                                                   [ ]
-;   * em alternância: ligadas (0, 2, 4, 6), desligadas (1, 3, 5, 7);            [ ]
+;   * todas desligada (apagadas);                                               [x]
+;   * todas acesas (ligadas);                                                   [x]
+;   * em alternância: ligadas (0, 2, 4, 6), desligadas (1, 3, 5, 7);            [x]
 ; * Definir a cor da luz, a posição (linha e coluna) das lâmpadas e a dimensão
-;   (um ou mais caracteres).                                                    [ ]
+;   (um ou mais caracteres).                                                    [x]
 
 ; Requisitos:
 ; * Estruturar o programa usando procedimentos (nomeadamente para a entrada dos
-;   dados), variáveis (incluindo vetores, se adequado) e constantes.            [ ]
-; * Incluir um "menu" inicial que permita a escolher a operação a executar.     [ ]
-; * Prevenir e detetar a ocorrência de erros na leitura dos dados (validação).  [ ]
+;   dados), variáveis (incluindo vetores, se adequado) e constantes.            [x]
+; * Incluir um "menu" inicial que permita a escolher a operação a executar.     [x]
+; * Prevenir e detetar a ocorrência de erros na leitura dos dados (validação).  [x]
 ; * Documentar devidamente o código, acrescentando comentários ao programa
 ;   fonte, ou em documento separado, indicando:
-;   * Procedimentos definidos e forma de passagem de parâmetros;                [ ]
-;   * Algoritmo(s) implementado(s);                                             [ ]
+;   * Procedimentos definidos e forma de passagem de parâmetros;                [x]
+;   * Algoritmo(s) implementado(s);                                             [x]
 ;   * Limitações do programa (valores das variáveis) e situações não
-;     contempladas.                                                             [ ]
+;     contempladas.                                                             [x]
 ;   * Atender a questões de eficiência: minimizar o nº de instruções e o nº de
-;     variáveis (memória ocupada)                                               [ ]
+;     variáveis (memória ocupada)                                               [x]
 ;
 ; ---
 ;
