@@ -292,7 +292,7 @@ draw_led            proc
                     push    bx
                     push    dx
                     push    cx
-                    mov     bx, al                                              ; `bx` <- `al`
+                    mov     bl, al                                              ; `bx` <- `al`
                     push    ax
 
                     mov     dl, led_x[bx]                                       ; `dl` <- led_x[`bx`]     - Pos X
@@ -494,7 +494,7 @@ main                proc
 
                     dec     al                                                  ; `al` <- `al` - 1 : because 0-index
 
-                    mov     bx, al                                              ; `bx` <- `al` : store currently selected LED in bx
+                    mov     bl, al                                              ; `bx` <- `al` : store currently selected LED in bx
 
                     jmp     menu_2_1
 
@@ -549,7 +549,7 @@ main                proc
     pick_color_all:
                     mov     cl, 0
       pick_color_al:
-                    mov     bx, cl
+                    mov     bl, cl
                     mov     led_color[bx], al
 
                     inc     cl
@@ -580,7 +580,7 @@ main                proc
     pick_pos_x_all:
                     mov     cl, 0
       pick_pos_x_al:
-                    mov     bx, cl
+                    mov     bl, cl
                     mov     led_x[bx], al
 
                     inc     cl
@@ -611,7 +611,7 @@ main                proc
     pick_pos_y_all:
                     mov     cl, 0
       pick_pos_y_al:
-                    mov     bx, cl
+                    mov     bl, cl
                     mov     led_y[bx], al
 
                     inc     cl
@@ -644,7 +644,7 @@ main                proc
     pick_size_all:
                     mov     cl, 0
       pick_size_al:
-                    mov     bx, cl
+                    mov     bl, cl
                     mov     led_size[bx], al
 
                     inc     cl
